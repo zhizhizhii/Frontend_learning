@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>列表</p>
+    <ul v-for="(item,index) in list"><li>{{item}}</li></ul>
+    <input type="text" v-model="message"/>
+    <button @click="handleClick">增加一个项</button>
+  </div>
+
+  <script src="../vue/vue.js"></script>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        message:"",
+        list:[],
+      },
+      methods:{
+        handleClick(){
+          if(this.message === ''){
+            confirm("There is no Content!");
+            return;
+          }
+          this.list.push(this.message);
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="img-zone"></div>
+  <button id="main-btn">getData</button>
+  
+  <script>
+    let btn = document.getElementById("main-btn");
+    let data = {
+      page_num:1,
+      page_size:10,
+    }
+    btn.onclick = () => {
+      let xhr = new XMLHttpRequest();
+            
+      xhr.open('POST','https://www.lohas.ink/api/shopinfo/getbrief',true);
+      xhr.setRequestHeader('Content-Type', 'application/json')
+      xhr.send(JSON.stringify(data));
+      xhr.onreadystatechange = () => {
+        if(xhr.readyState === 4){
+          if(xhr.status >= 200 && xhr.status < 300){
+            let data = JSON.parse(xhr.response).shop_briefinfo_items;
+            for(let item of data){
+              let img = document.createElement('img');
+              img.src = item.avatar;
+              img.width = "100";
+              document.getElementById('img-zone').appendChild(img);
+            }
+          }
+        }
+      }
+    }
+
+  </script>
+</body>
+</html>

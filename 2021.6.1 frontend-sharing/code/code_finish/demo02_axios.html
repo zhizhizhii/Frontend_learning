@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <img v-for="item in imgArray" :src="item" width="100"/>
+    <div>
+      <button @click="handleClick">getData</button>
+    </div>
+  </div>
+
+  <script src="../vue/vue.js"></script>
+  <script src="../axios/axios.min.js"></script>
+  <script>
+
+    const app = new Vue({
+      el:"#app",
+      data:{
+        imgArray:[],
+      },
+      methods:{
+        handleClick(){
+          let data = {
+            page_num:1,
+            page_size:10,
+          }
+          const request = axios.create({
+            baseURL:"https:www.lohas.ink",
+            timeout:5000,
+          })
+          request({
+            method:'POST',
+            url:"/api/shopinfo/getbrief",
+            data
+          }).then((res)=>{
+            let array = res.data.shop_briefinfo_items;
+            array.forEach(element => {
+              this.imgArray.push(element.avatar);
+            });
+          })
+        },
+      }
+    })
+
+    //请求拦截
+    // axios.interceptors.request.use(function(config){
+    //     console.log(config);
+    //     return config; 
+    //   },function(error){ 
+    //     return Promise.reject(error);
+    // }); 
+
+    //响应拦截
+    // axios.interceptors.response.use(function(response){ 
+    //   return response; 
+    // },function(error){
+    //   return Promise.reject(error);
+    // });
+  </script>
+</body>
+</html>

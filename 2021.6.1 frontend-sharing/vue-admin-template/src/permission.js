@@ -24,17 +24,17 @@ router.beforeEach(async(to, from, next) => {
 
   // 因为需要在登陆状态下访问系统所有的页面，所以判断token是否存在
   if (hasToken) {
-    //有token代表已经登录
+    // 有token代表已经登录
     if (to.path === '/login') {
-      //如果存在token,且目标页面是登录页，重定向至主页
+      // 如果存在token,且目标页面是登录页，重定向至主页
       next({ path: '/' })
-      //完成进度条
+      // 完成进度条
       NProgress.done()
     } else {
-      //从vuex中取出个人信息
+      // 从vuex中取出个人信息
       const hasGetUserInfo = store.getters.name
-      //因为刷新页面后，vuex中的信息会消失，而vuex中的token存储在cookie中重新取得
-      //而个人信息需要重新调用后台接口获取
+      // 因为刷新页面后，vuex中的信息会消失，而vuex中的token存储在cookie中重新取得
+      // 而个人信息需要重新调用后台接口获取
       if (hasGetUserInfo) {
         next()
       } else {

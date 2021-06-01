@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    function resolveAfter2Seconds() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve('response data');
+        }, 1500);
+      });
+    }
+
+    async function asyncCall() {
+      console.log('calling');
+      const result1 = await resolveAfter2Seconds();
+      console.log(result1);
+      const result2 = await resolveAfter2Seconds();
+      console.log(result2);
+    }
+
+    asyncCall();
+  </script>
+</body>
+
+</html>

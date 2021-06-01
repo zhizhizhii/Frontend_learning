@@ -1,0 +1,69 @@
+{
+  "total_page": 1,
+  "page_num": 1,
+  "shop_briefinfo_items": [
+      {
+          "avatar": "https://cffuuimg.oss-cn-shanghai.aliyuncs.com/5e21d30d-3e69-4400-9663-0b9666019d0e.jpg",
+          "shop_id": 22,
+          "shop_name": "LOKAL",
+          "shop_type": "bread",
+          "shop_lohas_info": "晚上7点后面包打8折",
+          "shop_longitude": 121.21196,
+          "shop_latitude": 31.286674
+      },
+      {
+          "avatar": "https://lohas-bucket.oss-cn-shanghai.aliyuncs.com/images/2021/04/18/16187578787173381.jpeg",
+          "shop_id": 21,
+          "shop_name": "星巴克",
+          "shop_type": "fruit",
+          "shop_lohas_info": "自带杯子少付4元",
+          "shop_longitude": 121.21992,
+          "shop_latitude": 31.287603
+      },
+      {
+          "avatar": "https://lohas-bucket.oss-cn-shanghai.aliyuncs.com/images/2021/04/18/1618755178666197.jpg",
+          "shop_id": 120,
+          "shop_name": "天猫超市",
+          "shop_type": "market",
+          "shop_lohas_info": "临期商品打折促销",
+          "shop_longitude": 121.21628,
+          "shop_latitude": 31.286911
+      },
+      {
+          "avatar": "https://lohas-bucket.oss-cn-shanghai.aliyuncs.com/images/2021/04/18/16187565229015254.jpg",
+          "shop_id": 127,
+          "shop_name": "吉米娜烘焙坊",
+          "shop_type": "others",
+          "shop_lohas_info": "当日面包21点后打折",
+          "shop_longitude": 121.2215,
+          "shop_latitude": 31.28777
+      },
+      {
+          "avatar": "https://lohas-bucket.oss-cn-shanghai.aliyuncs.com/images/2021/04/18/16187571042893779.jpg",
+          "shop_id": 128,
+          "shop_name": "鲜得宝超市",
+          "shop_type": "bread",
+          "shop_lohas_info": "临期商品打折促销",
+          "shop_longitude": 121.22141,
+          "shop_latitude": 31.287626
+      },
+      {
+          "avatar": "https://lohas-bucket.oss-cn-shanghai.aliyuncs.com/images/2021/04/19/16188426718319560.jpg",
+          "shop_id": 129,
+          "shop_name": "鲜果多",
+          "shop_type": "fruit",
+          "shop_lohas_info": "临期水果8.5折，更有众多打折水果",
+          "shop_longitude": 121.21724,
+          "shop_latitude": 31.28688
+      },
+      {
+          "avatar": "https://lohas-bucket.oss-cn-shanghai.aliyuncs.com/images/2021/04/19/16188425065363883.jpg",
+          "shop_id": 130,
+          "shop_name": "森发水果店",
+          "shop_type": "market",
+          "shop_lohas_info": "水果打折啦！",
+          "shop_longitude": 121.21774,
+          "shop_latitude": 31.287062
+      }
+  ]
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>列表</p>
+  <ul id="list"></ul>
+  <input id="input" type="text"/>
+  <button id="main-btn">增加一个项</button>
+  <script>
+    let btn = document.querySelector("#main-btn");
+    btn.onclick = () => {
+      let content = document.getElementById("input").value;
+      if(content === ''){
+        confirm("There is no Content!");
+        return ;
+      }
+      let element = document.createElement('li');
+      element.innerHTML = content;
+      document.getElementById("list").appendChild(element);
+    }
+  </script>
+</body>
+</html>
