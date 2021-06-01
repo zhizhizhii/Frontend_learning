@@ -7,37 +7,32 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="img-zone">
-
-  </div>
-  <button id="main-btn">getData</button>
   
+  <div id="img-zone"></div>
+  <button id="main-btn">getData</button>
+
   <script>
-    let btn = document.getElementById("main-btn");
-    let data = {
-      page_num:1,
-      page_size:10,
-    }
-    btn.onclick = () => {
+    let btn = document.getElementById('main-btn');
+    btn.onclick = function(){
       let xhr = new XMLHttpRequest();
-            
+      let data ={
+        page_num:1,
+        page_size:10
+      }
       xhr.open('POST','https://www.lohas.ink/api/shopinfo/getbrief',true);
-      xhr.setRequestHeader('Content-Type', 'application/json')
+      xhr.setRequestHeader('Content-Type','application/json');
       xhr.send(JSON.stringify(data));
-      xhr.onreadystatechange = () => {
+      xhr.onreadyStatechange = () =>{
         if(xhr.readyState === 4){
           if(xhr.status >= 200 && xhr.status < 300){
             let data = JSON.parse(xhr.response).shop_briefinfo_items;
-            for(let item of data){
-              let img = document.createElement('img');
-              img.src = item.avatar;
-              img.width="100";
-              document.getElementById("img-zone").appendChild(img);
-            }
+            console.log(data);
           }
         }
       }
     }
+
+
 
   </script>
 </body>
